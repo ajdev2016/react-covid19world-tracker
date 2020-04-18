@@ -37,9 +37,9 @@ export class CountryData extends Component {
             <Col xs="6" sm="6" md="4" lg="3" className="text-center p-3" style={card}>
                 <img className="mb-2" src={this.getFlag(country)} width="50" />
                 <h4>{country}</h4> 
-                <p style={info}>Confirmed: {confirmed}</p> 
-                <p style={info}>Recovered: {recovered}</p>  
-                <p style={info}>Deaths: {deaths}</p>    
+                <p style={info}>Confirmed: {new Intl.NumberFormat().format(confirmed)}</p>  
+                <p style={info}>Recovered: {new Intl.NumberFormat().format(recovered)}</p>  
+                <p style={info}>Deaths: {new Intl.NumberFormat().format(deaths)}</p>    
             </Col>
         )
     }
