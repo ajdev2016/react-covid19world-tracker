@@ -25,14 +25,24 @@ export class Home extends Component {
 
             const start_date = startDate ? startDate : moment().subtract(1, 'day').format('YYYY-M-D')
 
+            console.log(start_date)
+
             let result  = []
             Object.keys(data).map(key => {
+
+                // data[key].map(item2 => {
+                //     // if (item2.date === start_date ) {
+                //         item2.country = key
+                //     //     result.push(item2)
+                //     // }
+                //     console.log(item2.pop())
+                // })
+
                 data[key].map(item2 => {
-                    if (item2.date === start_date ) {
-                        item2.country = key
-                        result.push(item2)
-                    }
+                    item2.country = key  
                 })
+                
+                result.push(data[key].pop())
             })
             // console.log(result)
             
