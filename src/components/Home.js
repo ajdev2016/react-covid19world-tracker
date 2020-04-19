@@ -27,8 +27,7 @@ export class Home extends Component {
 
             console.log(start_date)
 
-            let result  = []
-            Object.keys(data).map(key => {
+            const result = Object.keys(data).map(key => {
 
                 // data[key].map(item2 => {
                 //     // if (item2.date === start_date ) {
@@ -42,8 +41,9 @@ export class Home extends Component {
                     item2.country = key  
                 })
                 
-                result.push(data[key].pop())
+                return data[key].pop()
             })
+
             // console.log(result)
             
             this.setState({ 
